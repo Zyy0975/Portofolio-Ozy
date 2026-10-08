@@ -1,0 +1,166 @@
+/* Modern Cyber-Minimal Aesthetic & Animation Styles */
+:root {
+  --color-primary: #00f0ff;
+  --color-primary-glow: rgba(0, 240, 255, 0.35);
+  --color-tertiary: #65f2b5;
+  --color-surface-dark: #0d0e13;
+  --color-surface-card: #1a1b21;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0e13;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292a2f;
+  border-radius: 9999px;
+  border: 2px solid #0d0e13;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00dbe9;
+}
+
+/* Glassmorphism & Cyber Backdrop */
+.glass-header {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(26, 27, 33, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
+}
+
+/* Subtle Interactive Grid Background */
+.cyber-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Modal styles */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(12px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.modal-backdrop.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Toast Notification */
+#toast {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Light Mode Overrides */
+html:not(.dark) {
+  --color-surface-dark: #f8fafc;
+  --color-surface-card: #ffffff;
+}
+
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .bg-surface-container-lowest {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-surface-container-low {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0;
+}
+
+html:not(.dark) .bg-surface-container {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #e2e8f0;
+}
+
+html:not(.dark) .bg-surface-container-high {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .bg-surface-container-highest {
+  background-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .text-on-surface {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-on-surface-variant {
+  color: #475569 !important;
+}
+
+html:not(.dark) .text-primary {
+  color: #0284c7 !important;
+}
+
+html:not(.dark) .bg-primary-container {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+html:not(.dark) .text-primary-container {
+  color: #0284c7 !important;
+}
+
+html:not(.dark) .bg-surface-dim\/80 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html:not(.dark) .divide-surface-container-highest\/60 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .cyber-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
